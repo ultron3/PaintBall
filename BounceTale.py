@@ -2,6 +2,7 @@ import pygame
 import sys
 import logging
 import xboxController as np
+import PlaystationController as ps
 # Configurazione del modulo di logging
 logging.basicConfig(filename='game_log.txt', level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 pygame.init()

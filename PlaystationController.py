@@ -30,16 +30,18 @@ class PSController:
 
 def main():
     ps_controller = PSController()
+    try:
+        while True:
+            input_values = ps_controller.get_input()
 
-    while True:
-        input_values = ps_controller.get_input()
+            # Stampa i valori dell'input
+            print(f"Left Stick: ({input_values[0]}, {input_values[1]})")
+            print(f"Right Stick: ({input_values[2]}, {input_values[3]})")
+            print(f"Buttons: {input_values[4]}")
 
-        # Stampa i valori dell'input
-        print(f"Left Stick: ({input_values[0]}, {input_values[1]})")
-        print(f"Right Stick: ({input_values[2]}, {input_values[3]})")
-        print(f"Buttons: {input_values[4]}")
-
-        pygame.display.update()
+            pygame.display.update()
+    except pygame.error as e:
+        print(f"error: {e}")
 
 if __name__ == "__main__":
     main()
