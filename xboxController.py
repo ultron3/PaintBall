@@ -16,10 +16,10 @@ class XboxController:
         left_stick_y = self.controller.get_axis(1)
         right_stick_x = self.controller.get_axis(2)
         right_stick_y = self.controller.get_axis(3)
-
+        name=self.controller.get_name()
         buttons = [self.controller.get_button(i) for i in range(self.controller.get_numbuttons())]
 
-        return left_stick_x, left_stick_y, right_stick_x, right_stick_y, buttons
+        return left_stick_x, left_stick_y, right_stick_x, right_stick_y, buttons,name
 
 
 def main():
@@ -28,7 +28,7 @@ def main():
     try:
         while True:
             input_values = xbox_controller.get_input()
-
+            
         # Stampa i valori dell'input
             print(f"Left Stick: ({input_values[0]}, {input_values[1]})")
             print(f"Right Stick: ({input_values[2]}, {input_values[3]})")
@@ -37,6 +37,7 @@ def main():
             logging.info(f"Left Stick: ({input_values[0]}, {input_values[1]})")
             logging.info(f"Left Stick: ({input_values[0]}, {input_values[1]})")
             logging.info(f"Buttons: {input_values[4]}")
+            logging.info(f"name: {input_values[5]}")
 
             pygame.display.update()
     except pygame.error as e:
