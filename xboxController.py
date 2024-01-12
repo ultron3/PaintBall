@@ -1,5 +1,5 @@
 import pygame
-
+import logging
 class XboxController:
     def __init__(self, joystick_index=0):
         pygame.init()
@@ -24,6 +24,7 @@ class XboxController:
 
 def main():
     xbox_controller = XboxController()
+    logging.basicConfig(filename='controller.txt', level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
     try:
         while True:
             input_values = xbox_controller.get_input()
@@ -32,6 +33,10 @@ def main():
             print(f"Left Stick: ({input_values[0]}, {input_values[1]})")
             print(f"Right Stick: ({input_values[2]}, {input_values[3]})")
             print(f"Buttons: {input_values[4]}")
+            
+            logging.info(f"Left Stick: ({input_values[0]}, {input_values[1]})")
+            logging.info(f"Left Stick: ({input_values[0]}, {input_values[1]})")
+            logging.info(f"Buttons: {input_values[4]}")
 
             pygame.display.update()
     except pygame.error as e:
