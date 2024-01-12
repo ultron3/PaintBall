@@ -7,6 +7,7 @@ import PlaystationController as ps
 logging.basicConfig(filename='game_log.txt', level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 pygame.init()
 platform=np.XboxController(0)
+platform=ps.PSController(0)
 width, height = 800, 600
 screen = pygame.display.set_mode((width, height))
 pygame.display.set_caption("Gioco con Salto e Punteggio")
