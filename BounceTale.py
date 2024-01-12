@@ -1,11 +1,11 @@
 import pygame
 import sys
 import logging
-
+import xboxController as np
 # Configurazione del modulo di logging
 logging.basicConfig(filename='game_log.txt', level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 pygame.init()
-
+platform=np.XboxController(0)
 width, height = 800, 600
 screen = pygame.display.set_mode((width, height))
 pygame.display.set_caption("Gioco con Salto e Punteggio")
@@ -37,7 +37,7 @@ def draw_score():
 try:
     pygame.joystick.init()
     joystick_count = pygame.joystick.get_count()
-
+    
     if joystick_count > 0:
         joystick = pygame.joystick.Joystick(0)
         joystick.init()
