@@ -125,14 +125,16 @@ while True:
     except pygame.error as e:
         logging.error(f"error:{e}")
     # Verifica se il punteggio ha raggiunto o superato 1000
-    if score < 1000:
+    if joystick_count > 0:  
+        if score < 1000:
         # Incrementa il punteggio solo se è inferiore a 1000
-        score += 1
-        logging.info(f"the score max is: {score}")
+            score += 1
+            logging.info(f"the score max is: {score}")
 
     # Aggiorna la finestra di gioco
     pygame.display.flip()
 
     # Imposta il numero di frame al secondo
     pygame.time.Clock().tick(60)
+    
 
