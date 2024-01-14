@@ -6,9 +6,34 @@ import PlaystationController as ps
 # Configurazione del modulo di logging
 logging.basicConfig(filename='game_log.txt', level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 pygame.init()
-platform_xbox=np.XboxController(0)
-print(platform_xbox.get_input())
-platform_playstation=ps.PSController(0)
+# Carica il file audio in formato MP3
+pygame.mixer.init()
+pygame.mixer.music.load('C:\\Users\\IdeaPad\\OneDrive\\Documenti\PaintBall\\FileAudioPaintBall.mpeg')
+
+# Riproduci la musica in loop (-1 indica la riproduzione continua)
+pygame.mixer.music.play(-1)
+
+# Tentativo di inizializzazione del controller Xbox
+try:
+    platform_controller = np.XboxController(0)
+    #print("Xbox controller detected.")
+    logging.info("Xbox controller detected.")
+except Exception as xbox_error:
+    # Se si verifica un'eccezione, potrebbe essere perché il controller Xbox non è connesso
+    #print("Xbox controller not detected:", xbox_error)
+    logging.warning("Xbox controller not detected:", xbox_error)
+
+    # Tentativo di inizializzazione del controller PlayStation
+    try:
+        platform_controller = ps.PSController(0)
+        #print("PlayStation controller detected.")
+        logging.info("Playstation controller detected.")
+    except Exception as ps_error:
+        # Se neanche il controller PlayStation è connesso, potrebbe essere un problema
+        print("PlayStation controller not detected:", ps_error)
+        logging.warning("Xbox controller not detected:", ps_error)
+        raise RuntimeError("Nessun controller rilevato. Assicurati che almeno un controller sia collegato.")
+
 width, height = 800, 600
 screen = pygame.display.set_mode((width, height))
 pygame.display.set_caption("Gioco con Salto e Punteggio")
@@ -59,6 +84,7 @@ try:
     while start_effect_countdown > 0:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
+                pygame.mixer.music.stop()  # Interrompi la musica prima di uscire
                 pygame.quit()
                 sys.exit()
 
@@ -132,7 +158,7 @@ while True:
         if score < 1000:
         # Incrementa il punteggio solo se è inferiore a 1000
             score += 1
-            logging.info(f"the score max is: {score}")
+            #logging.info(f"the score max is: {score}")
 
     # Aggiorna la finestra di gioco
     pygame.display.flip()
