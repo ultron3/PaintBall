@@ -9,6 +9,10 @@ pygame.init()
 # Carica il file audio in formato MP3
 pygame.mixer.init()
 pygame.mixer.music.load('C:\\Users\\IdeaPad\\OneDrive\\Documenti\PaintBall\\FileAudioPaintBall.mpeg')
+#background_image = pygame.image.load('C:\\Users\\IdeaPad\\OneDrive\\Documenti\\PaintBall\\sfondogame.jpeg')  # Sostituisci 'path/to/background_image.jpg' con il percorso del tuo file immagine
+#background_rect = background_image.get_rect()
+
+
 
 # Riproduci la musica in loop (-1 indica la riproduzione continua)
 pygame.mixer.music.play(-1)
@@ -33,11 +37,11 @@ except Exception as xbox_error:
         print("PlayStation controller not detected:", ps_error)
         logging.warning("Xbox controller not detected:", ps_error)
         raise RuntimeError("Nessun controller rilevato. Assicurati che almeno un controller sia collegato.")
-
+background_image = pygame.image.load('C:\\Users\\IdeaPad\\OneDrive\\Documenti\\PaintBall\\sfondogame.jpeg')
 width, height = 800, 600
 screen = pygame.display.set_mode((width, height))
 pygame.display.set_caption("Gioco con Salto e Punteggio")
-
+background_image = pygame.transform.scale(background_image, (width, height))
 white = (255, 255, 255)
 red = (255, 0, 0)
 
@@ -84,7 +88,8 @@ try:
     while start_effect_countdown > 0:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                pygame.mixer.music.stop()  # Interrompi la musica prima di uscire
+                pygame.mixer.music.stop()# Interrompi la musica prima di uscire
+              
                 pygame.quit()
                 sys.exit()
 
@@ -108,6 +113,7 @@ while True:
             sys.exit()
 
     keys = pygame.key.get_pressed()
+    screen.blit(background_image, (0, 0))
 
     # Logica del salto
     if not is_jumping:
