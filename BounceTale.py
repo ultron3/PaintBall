@@ -12,8 +12,6 @@ pygame.mixer.music.load('C:\\Users\\IdeaPad\\OneDrive\\Documenti\PaintBall\\File
 #background_image = pygame.image.load('C:\\Users\\IdeaPad\\OneDrive\\Documenti\\PaintBall\\sfondogame.jpeg')  # Sostituisci 'path/to/background_image.jpg' con il percorso del tuo file immagine
 #background_rect = background_image.get_rect()
 
-
-
 # Riproduci la musica in loop (-1 indica la riproduzione continua)
 pygame.mixer.music.play(-1)
 

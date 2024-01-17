@@ -10562,3 +10562,11 @@
 2024-01-15 12:57:41,773 - INFO - joistick trovato Xbox 360 Controller
 2024-01-15 12:59:31,265 - INFO - Xbox controller detected.
 2024-01-15 12:59:31,341 - INFO - joistick trovato Xbox 360 Controller
+2024-01-15 20:42:55,779 - INFO - Xbox controller detected.
+2024-01-15 20:42:55,875 - INFO - joistick trovato Xbox 360 Controller
+2024-01-16 19:51:47,805 - INFO - Xbox controller detected.
+2024-01-16 19:51:47,958 - INFO - joistick trovato Xbox 360 Controller
+2024-01-16 19:54:31,051 - INFO - Xbox controller detected.
+2024-01-16 19:54:31,130 - INFO - joistick trovato Xbox 360 Controller
+2024-01-16 20:56:06,427 - INFO - Xbox controller detected.
+2024-01-16 20:56:06,556 - INFO - joistick trovato PS4 Controller
