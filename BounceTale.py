@@ -1,5 +1,6 @@
 import pygame
 import sys
+import time
 import logging
 import xboxController as np
 import PlaystationController as ps
@@ -78,7 +79,28 @@ try:
         logging.warning("Nessun joystick trovato.")
 except pygame.error as e:
     logging.error(f"error: {e}")
+try:
+    start_screen_image = pygame.image.load('C:\\Users\\IdeaPad\\OneDrive\\Documenti\\PaintBall\\sfondogame.jpeg')  # Sostituisci con il percorso del tuo file immagine
+    start_screen_image = pygame.transform.scale(start_screen_image, (width, height))
 
+    # Visualizza l'immagine di avvio per 3 secondi
+    start_screen_duration = 3  # Tempo in secondi
+    start_screen_start_time = time.time()
+
+    while time.time() - start_screen_start_time < start_screen_duration:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                sys.exit()
+
+    screen.blit(start_screen_image, (0, 0))
+    pygame.display.flip()
+    pygame.time.Clock().tick(60)
+
+    # Resetta il timer
+    start_screen_start_time = time.time()
+except:
+    logging("image not found")
 # Effetto di inizio gioco
 start_effect_frames = 60  # Numero di frame per l'effetto di inizio
 start_effect_countdown = start_effect_frames
