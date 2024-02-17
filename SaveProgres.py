@@ -3,7 +3,7 @@ import logging
 import win10toast
 class SaveManager:
     SAVE_FILE_NAME = 'D:\\BounceTale.mwc'
-
+    logging.basicConfig(filename='game_log.txt', level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
     @staticmethod
     def save_game_data():
         try:

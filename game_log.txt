@@ -10588,3 +10588,4 @@
 2024-02-17 11:19:07,401 - INFO - joistick trovato Xbox 360 Controller
 2024-02-17 12:35:10,051 - INFO - Xbox controller detected.
 2024-02-17 12:35:10,202 - INFO - joistick trovato Xbox 360 Controller
+2024-02-17 12:51:48,939 - INFO - Dispositivi di archiviazione trovati.
