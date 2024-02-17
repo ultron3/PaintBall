@@ -4,37 +4,44 @@ import time
 import logging
 import xboxController as np
 import PlaystationController as ps
+import NSController as ns
+import os
+import SaveProgres as sm
 # Configurazione del modulo di logging
 logging.basicConfig(filename='game_log.txt', level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 pygame.init()
 # Carica il file audio in formato MP3
 pygame.mixer.init()
 pygame.mixer.music.load('C:\\Users\\IdeaPad\\OneDrive\\Documenti\PaintBall\\FileAudioPaintBall.mpeg')
-#background_image = pygame.image.load('C:\\Users\\IdeaPad\\OneDrive\\Documenti\\PaintBall\\sfondogame.jpeg')  # Sostituisci 'path/to/background_image.jpg' con il percorso del tuo file immagine
-#background_rect = background_image.get_rect()
 
+save_manager = sm.SaveManager()
 # Riproduci la musica in loop (-1 indica la riproduzione continua)
 pygame.mixer.music.play(-1)
 
 # Tentativo di inizializzazione del controller Xbox
 try:
     platform_controller = np.XboxController(0)
-    #print("Xbox controller detected.")
+  
     logging.info("Xbox controller detected.")
 except Exception as xbox_error:
     # Se si verifica un'eccezione, potrebbe essere perché il controller Xbox non è connesso
-    #print("Xbox controller not detected:", xbox_error)
+    
     logging.warning("Xbox controller not detected:", xbox_error)
 
     # Tentativo di inizializzazione del controller PlayStation
     try:
         platform_controller = ps.PSController(0)
-        #print("PlayStation controller detected.")
+       
         logging.info("Playstation controller detected.")
     except Exception as ps_error:
-        # Se neanche il controller PlayStation è connesso, potrebbe essere un problema
+        # Se neanche il controller PlayStation o il controller Nintendo Switch è connesso, potrebbe essere un problema
         print("PlayStation controller not detected:", ps_error)
-        logging.warning("Xbox controller not detected:", ps_error)
+        logging.warning("ps controller not detected:", ps_error)
+    try:
+        platform_controller=ns.NSController()
+        logging.info("Nintendo controller detected")
+    except Exception as ns_error:
+        logging.warning("ns controller not detected")
         raise RuntimeError("Nessun controller rilevato. Assicurati che almeno un controller sia collegato.")
 background_image = pygame.image.load('C:\\Users\\IdeaPad\\OneDrive\\Documenti\\PaintBall\\sfondogame.jpeg')
 width, height = 800, 600
@@ -64,6 +71,8 @@ def draw_score():
     except Exception as e:
         logging.warning(f"error {e}")
 
+# Aggiungi una variabile per tenere traccia dello stato del controller
+controller_connected = False
 # Inizializza il joystick
 try:
     pygame.joystick.init()
@@ -71,6 +80,7 @@ try:
     
     if joystick_count > 0:
         joystick = pygame.joystick.Joystick(0)
+        controller_connected = True
         joystick.init()
         joystick_name = joystick.get_name()
         logging.info(f"joistick trovato {joystick_name}")
@@ -154,7 +164,7 @@ while True:
     if joystick_count > 0:
         player_x += joystick.get_axis(0) * player_speed
         player_y += joystick.get_axis(1) * player_speed
-
+   
     # Impedisci che la pallina esca dagli schermi orizzontali
     player_x = max(player_radius, min(player_x, width - player_radius))
 

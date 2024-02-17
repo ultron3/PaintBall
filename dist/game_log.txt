@@ -8,3 +8,5 @@
 2024-01-20 19:19:32,340 - INFO - joistick trovato Xbox 360 Controller
 2024-01-20 19:19:49,504 - INFO - Xbox controller detected.
 2024-01-20 19:19:49,582 - INFO - joistick trovato Xbox 360 Controller
+2024-01-21 09:56:20,926 - INFO - Xbox controller detected.
+2024-01-21 09:56:21,007 - INFO - joistick trovato Xbox 360 Controller

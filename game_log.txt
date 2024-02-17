@@ -10580,3 +10580,11 @@
 2024-01-21 09:53:33,834 - INFO - joistick trovato Xbox 360 Controller
 2024-01-21 09:53:39,724 - INFO - Xbox controller detected.
 2024-01-21 09:53:39,805 - INFO - joistick trovato Xbox 360 Controller
+2024-02-11 10:53:18,066 - INFO - Xbox controller detected.
+2024-02-11 10:53:18,229 - INFO - joistick trovato Xbox 360 Controller
+2024-02-17 11:17:32,401 - INFO - Xbox controller detected.
+2024-02-17 11:17:32,541 - INFO - joistick trovato Xbox 360 Controller
+2024-02-17 11:19:07,334 - INFO - Xbox controller detected.
+2024-02-17 11:19:07,401 - INFO - joistick trovato Xbox 360 Controller
+2024-02-17 12:35:10,051 - INFO - Xbox controller detected.
+2024-02-17 12:35:10,202 - INFO - joistick trovato Xbox 360 Controller
