@@ -11,3 +11,4 @@ https://github.com/ultron3/PaintBall/assets/104757961/2478283c-e331-46ec-90d2-24
 
 
 Now through a storage device I can save game progress, send a notification of saving success, for notifications I use the win10toast library.
+Added folder where I input the xml files so I can read the tags.
