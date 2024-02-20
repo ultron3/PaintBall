@@ -10589,3 +10589,16 @@
 2024-02-17 12:35:10,051 - INFO - Xbox controller detected.
 2024-02-17 12:35:10,202 - INFO - joistick trovato Xbox 360 Controller
 2024-02-17 12:51:48,939 - INFO - Dispositivi di archiviazione trovati.
+2024-02-17 18:22:29,008 - INFO - Dispositivi di archiviazione trovati.
+2024-02-17 18:22:35,362 - INFO - Xbox controller detected.
+2024-02-17 18:22:35,553 - INFO - joistick trovato Nintendo Switch Pro Controller
+2024-02-20 18:46:08,514 - INFO - Dispositivi di archiviazione trovati.
+2024-02-20 18:47:45,764 - INFO - Dispositivi di archiviazione trovati.
+2024-02-20 18:47:52,007 - INFO - Xbox controller detected.
+2024-02-20 18:47:52,131 - INFO - joistick trovato Nintendo Switch Pro Controller
+2024-02-20 18:50:19,844 - INFO - Dispositivi di archiviazione trovati.
+2024-02-20 18:50:43,815 - INFO - Dispositivi di archiviazione trovati.
+2024-02-20 18:50:54,248 - INFO - Dispositivi di archiviazione trovati.
+2024-02-20 18:51:11,626 - INFO - Dispositivi di archiviazione trovati.
+2024-02-20 18:51:18,173 - INFO - Xbox controller detected.
+2024-02-20 18:51:18,257 - INFO - joistick trovato Nintendo Switch Pro Controller
