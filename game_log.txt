@@ -10602,3 +10602,7 @@
 2024-02-20 18:51:11,626 - INFO - Dispositivi di archiviazione trovati.
 2024-02-20 18:51:18,173 - INFO - Xbox controller detected.
 2024-02-20 18:51:18,257 - INFO - joistick trovato Nintendo Switch Pro Controller
+2024-02-20 19:52:37,238 - INFO - Dispositivi di archiviazione trovati.
+2024-02-20 19:52:54,332 - INFO - Dispositivi di archiviazione trovati.
+2024-02-20 19:53:19,130 - INFO - Dispositivi di archiviazione trovati.
+2024-02-20 19:53:46,740 - INFO - Dispositivi di archiviazione trovati.
